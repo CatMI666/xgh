@@ -1,0 +1,7 @@
+<block wx:for="{{albums}}" wx:key="id" wx:for-index="idx" wx:for-item="album">
+    <view>
+        <view>{{album.name}}</view>
+        <view>{{album.photoTotal}}</view>
+        <view>{{album.formatUpdateTime}}</view>
+    </view>
+</block>

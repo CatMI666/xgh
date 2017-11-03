@@ -1,0 +1,28 @@
+<view style="text-align:center;">
+    <image src="/images/logo.png" style="width:7em;height:7em;"></image>
+</view>
+<view class="menus">
+    <view class="menu" style="border-left:#EF1F12 solid 3px;">
+        <navigator class="menu-name" url="/pages/album/list"><text class="menu-name-text">照片一箩筐</text></navigator>
+        <navigator class="menu-option" url="/pages/album/add-image">照片</navigator>
+        <navigator class="menu-option" url="/pages/album/add-video">视频</navigator>
+    </view>
+    <view class="menu" style="border-left:#00afc7 solid 3px">
+        <navigator class='menu-name' url="/pages/tour/index">
+            <text class='menu-name-text'>去哪儿</text>
+        </navigator>
+        <navigator class="menu-option" url="/pages/tour/add">发布</navigator>
+    </view>
+
+    <view class="menu" style="border-left:#000000 solid 3px">
+        <navigator class='menu-name' url="/pages/life/index"><text class='menu-name-text'>生活这口大锅</text></navigator>
+    </view>
+
+    <view class="menu" style="border-left:#31ba98 solid 3px">
+        <navigator class='menu-name' url="/pages/work/index"><text class='menu-name-text'>工作日历</text></navigator>
+    </view>
+
+    <view class='code'>
+        输入亲朋好友码
+    </view>
+</view>
