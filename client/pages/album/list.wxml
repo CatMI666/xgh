@@ -7,3 +7,11 @@
         </view>
     </block>
 </view>
+
+<view class='options'>
+    <navigator url='/pages/album/add'>
+        <view class="item">
+            <text>新建</text>
+        </view>
+    </navigator>
+</view>
