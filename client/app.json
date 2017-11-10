@@ -8,7 +8,8 @@
         "pages/tour/add",
         "pages/life/index",
         "pages/work/index",
-        "pages/album/add"
+        "pages/album/add",
+        "pages/photo/add"
     ],
     "window": {
         "backgroundTextStyle": "light",

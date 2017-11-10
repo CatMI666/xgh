@@ -6,15 +6,17 @@ use Yii;
 use yii\behaviors\TimestampBehavior;
 
 /**
- * This is the model class for table "photo".
+ * This is the model class for table "photo_item".
  *
  * @property integer $id
- * @property string $description
+ * @property integer $photo_id
+ * @property integer $album_id
  * @property integer $created_at
  * @property integer $updated_at
- * @property integer $album_id
+ * @property string $path
+ * @property integer $type
  */
-class Photo extends \yii\db\ActiveRecord
+class PhotoItem extends \yii\db\ActiveRecord
 {
     public function behaviors(){
         return [
@@ -29,7 +31,7 @@ class Photo extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'photo';
+        return 'photo_item';
     }
 
     /**
@@ -38,9 +40,9 @@ class Photo extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['album_id'], 'required'],
-            [['created_at', 'updated_at', 'album_id'], 'integer'],
-            [['description'], 'string', 'max' => 255],
+            [['photo_id', 'album_id',  'path'], 'required'],
+            [['photo_id', 'album_id', 'created_at', 'updated_at', 'type'], 'integer'],
+            [['path'], 'string', 'max' => 256],
         ];
     }
 
@@ -51,10 +53,12 @@ class Photo extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'description' => 'Description',
+            'photo_id' => 'Photo ID',
+            'album_id' => 'Album ID',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
-            'album_id' => 'Album ID',
+            'path' => 'Path',
+            'type' => 'Type',
         ];
     }
 }

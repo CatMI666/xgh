@@ -4,8 +4,8 @@
 <view class="menus">
     <view class="menu" style="border-left:#EF1F12 solid 3px;">
         <navigator class="menu-name" url="/pages/album/list"><text class="menu-name-text">照片一箩筐</text></navigator>
-        <navigator class="menu-option" url="/pages/album/add-image">照片</navigator>
-        <navigator class="menu-option" url="/pages/album/add-video">视频</navigator>
+        <navigator class="menu-option" url="/pages/photo/add">照片</navigator>
+        <navigator class="menu-option" url="/pages/photo/add-video">视频</navigator>
     </view>
     <view class="menu" style="border-left:#00afc7 solid 3px">
         <navigator class='menu-name' url="/pages/tour/index">

@@ -47,10 +47,21 @@ $config = [
             'showScriptName' => false,
             'enableStrictParsing'=>false,
             'rules' => [
+                //  统一的上传接口
+                'uploader-simple.html'=>'/uploader/simple',
+                // xcx
                 [
                     'class' => 'yii\rest\UrlRule',
                     'controller' => 'xcx/album'
-                ]
+                ],
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'xcx/photo'
+                ],
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'xcx/photo-item'
+                ],
             ],
         ],
     ],
