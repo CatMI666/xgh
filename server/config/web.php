@@ -60,7 +60,10 @@ $config = [
                 ],
                 [
                     'class' => 'yii\rest\UrlRule',
-                    'controller' => 'xcx/photo-item'
+                    'controller' => 'xcx/photo-item',
+                    'extraPatterns'=>[
+                        'POST add'=>'add',
+                    ]
                 ],
             ],
         ],

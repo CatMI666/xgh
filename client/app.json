@@ -9,7 +9,8 @@
         "pages/life/index",
         "pages/work/index",
         "pages/album/add",
-        "pages/photo/add"
+        "pages/photo/add",
+        "pages/photo/add-video"
     ],
     "window": {
         "backgroundTextStyle": "light",

@@ -39,4 +39,27 @@ class PhotoItemController extends ActiveController {
 
         return $model;
     }
+
+    public function actionAdd(){
+        $video = UploadedFile::getInstanceByName('file');
+        $body = Yii::$app->getRequest()->getBodyParams();
+
+        if($video == false){
+            throw new Exception('文件上传失败');
+        }
+
+        $ext = $video->getExtension();
+        $path_result = N8Folder::createItemPath('video',$ext);
+        $video->saveAs($path_result['save_path']);
+
+        $modelClass = $this->modelClass;
+        $model = new $modelClass();
+        $model->photo_id = $body['photo_id'];
+        $model->album_id = $body['album_id'];
+        $model->path = $path_result['web_path'];
+        $model->type = 2;
+        $model->save();
+
+        return $model;
+    }
 }
