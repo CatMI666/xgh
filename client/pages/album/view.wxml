@@ -1,0 +1,16 @@
+<view class="photos">
+    <block wx:for="{{photos}}" wx:key="id" wx:for-index="idx" wx:for-item="photo">
+        <view class="photo">
+            <view class="desc">{{photo.description}}</view>
+            <view class="items">
+                <block wx:for="{{photo.photos}}" wx:if="{{photo.photos.length==1}}" wx:key="id" wx:for-index="pidx" wx:for-item="photoItem">
+                    <image src="{{photoItem.path}}" style="width:10em;height:10em;"></image>
+                </block>
+
+                <block wx:for="{{photo.photos}}" wx:if="{{photo.photos.length>1}}" wx:key="id" wx:for-index="pidx" wx:for-item="photoItem">
+                    <image src="{{photoItem.path}}" style="width:5em;height:5em;display:inline-block;"></image>
+                </block>
+            </view>
+        </view>
+    </block>
+</view>

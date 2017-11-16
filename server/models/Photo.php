@@ -57,4 +57,26 @@ class Photo extends \yii\db\ActiveRecord
             'album_id' => 'Album ID',
         ];
     }
+
+    public function extraFields() {
+
+        return [
+            'photos'
+        ];
+    }
+
+    public function getPhotos(){
+        $data = PhotoItem::find()->where(['photo_id'=>$this->id])->all();
+
+        $return = [];
+        foreach($data as $item){
+            $return[] = [
+                'id'=>$item->id,
+                'path'=>Yii::$app->request->getHostInfo()."/static/".$item->path
+            ];
+        }
+
+        return $return;
+    }
+
 }

@@ -10,7 +10,8 @@
         "pages/work/index",
         "pages/album/add",
         "pages/photo/add",
-        "pages/photo/add-video"
+        "pages/photo/add-video",
+        "pages/album/view"
     ],
     "window": {
         "backgroundTextStyle": "light",

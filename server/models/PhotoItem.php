@@ -61,4 +61,7 @@ class PhotoItem extends \yii\db\ActiveRecord
             'type' => 'Type',
         ];
     }
+
+
+
 }

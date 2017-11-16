@@ -2,11 +2,13 @@
 
 namespace app\modules\xcx\controllers;
 
+use app\models\Photo;
 use Yii;
 use yii\base\Exception;
 use yii\rest\ActiveController;
 use yii\web\UploadedFile;
 use app\models\N8Folder;
+use yii\data\ActiveDataProvider;
 
 class PhotoItemController extends ActiveController {
     public $modelClass = 'app\models\PhotoItem';
@@ -14,7 +16,19 @@ class PhotoItemController extends ActiveController {
     public function actions() {
         $actions = parent::actions();
         unset($actions['create']);
+        $actions['index']['prepareDataProvider'] = [$this,'prepareDataProvider'];
         return $actions;
+    }
+
+    public function prepareDataProvider(){
+        $params = Yii::$app->request->queryParams;
+
+        $query = Photo::find()->where(['album_id'=>$params['album_id']]);
+        $provider = new ActiveDataProvider([
+            'query'=>$query->orderBy(['created_at'=>SORT_DESC])
+        ]);
+
+        return $provider;
     }
 
     public function actionCreate(){
